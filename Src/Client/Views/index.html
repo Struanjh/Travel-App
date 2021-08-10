@@ -13,6 +13,43 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <h1>Travel App</h1>
+       <header>
+            <h1>Travel App</h1>
+            <nav>
+                <ul>
+                    <li>Search</li>
+                    <li>Results</li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="search">
+            <form action="">
+                <!--The for label tag must match the input id tag to bind the 2 together-->
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" name="destination">
+                <label for="departure">Departure</label>
+                <input type="text" id="departure" name="departure">
+                <label for="arrival">Arrival</label>
+                <input type="text" id="arrival" name="arrival">
+                <button>Search</button>
+                <button>Reset</button>
+            </form>
+        </div>
+
+        <div id="results">
+            <div class="card">
+              <img src="" alt="">
+              <h4><b>Name of City Here</b></h4>
+              <p>Details about the weather can go here</p>
+            </div>  
+            <div class="card">
+                <img src="" alt="">
+                <h4><b>Name of City 2 Here</b></h4>
+                <p>Details about the weather can go here</p>
+            </div>  
+        </div>
+  
+
     </body>
 </html>
