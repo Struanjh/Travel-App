@@ -7,14 +7,17 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Travel App</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
     <body>
-       <header>
-            <h1>Travel App</h1>
+
+        <!--Header Section -> containing a title and simple navbar with 2 items-->
+        <!--This will be layed out using CSS Flexbox (Horiz)-->
+       <header class="header">
+            <h1>Go Explore</h1>
             <nav>
                 <ul>
                     <li>Search</li>
@@ -23,33 +26,55 @@
             </nav>
         </header>
 
-        <div id="search">
+        <!--Section where user can enter their search criteria-->
+        <!--This will be layed out using CSS Flexbox (Vert)-->
+        <div id="header">
+            <h2>Find Your Next Adventure</h2>
             <form action="">
                 <!--The for label tag must match the input id tag to bind the 2 together-->
                 <label for="destination">Destination</label>
                 <input type="text" id="destination" name="destination">
                 <label for="departure">Departure</label>
-                <input type="text" id="departure" name="departure">
+                <input type="date" id="departure" name="departure">
                 <label for="arrival">Arrival</label>
-                <input type="text" id="arrival" name="arrival">
+                <input type="date" id="arrival" name="arrival">
                 <button>Search</button>
                 <button>Reset</button>
             </form>
         </div>
 
+        <!--Results section where API Results will be returned to the user-->
+        <!--This will be layed out using CSS Grid-->
         <div id="results">
             <div class="card">
-              <img src="" alt="">
-              <h4><b>Name of City Here</b></h4>
-              <p>Details about the weather can go here</p>
+                <img src="" alt="">
+                <div class="container">
+                    <h4><b>Name of City Here</b></h4>
+                    <p>Details about the weather can go here</p>
+                </div>
             </div>  
             <div class="card">
                 <img src="" alt="">
-                <h4><b>Name of City 2 Here</b></h4>
-                <p>Details about the weather can go here</p>
+                <div class="container">
+                    <h4><b>Name of City 2 Here</b></h4>
+                    <p>Details about the weather can go here</p>
+                </div>
             </div>  
         </div>
-  
-
     </body>
 </html>
+
+
+ <!--https://www.w3schools.com/howto/howto_css_cards.asp-->
+
+ <!-- EXAMPLE STYLING FOR CARD TAKEN FROM LINK ABOVE
+     .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+  }
+  
+  /* Add rounded corners to the top left and the top right corner of the image */
+  img {
+    border-radius: 5px 5px 0 0;
+  }-->
