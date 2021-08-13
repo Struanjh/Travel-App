@@ -1,0 +1,19 @@
+
+/*Using the asterisk selects all elements. 
+Here we set all elements to 0 padding and margin by default, this is known as a "reset"*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*VH = Viewport height - viewable screen split into 100 portions*/
+.image--container {
+    background-image:url(../images/city_image_2.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    margin: 0px;
+}
