@@ -4,6 +4,7 @@ Here we set all elements to 0 padding and margin by default, this is known as a 
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Comfortaa', cursive;
 }
 
 /*VH = Viewport height - viewable screen split into 100 portions*/
@@ -12,8 +13,57 @@ Here we set all elements to 0 padding and margin by default, this is known as a 
     height: 100vh;
     background-size: cover;
     background-position: center;
+    filter: grayscale(40%);
 }
 
 body {
     margin: 0px;
+}
+
+
+/*HEADER SECTION*/
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    padding-top: 20px;
+    color: whitesmoke;
+    margin-bottom: 70px;
+}
+
+.header h1 {
+    justify-self: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.header ul.nav {
+    display: flex;
+    align-self: center;
+ 
+}
+
+.header ul.nav li {
+    padding-left: 20px;
+    list-style: none;
+    padding: 20px;
+}
+
+/*SEARCH SECTION*/
+
+#search {
+    margin: auto;
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+#search h2 {
+    font-size: 50px;
+    color: whitesmoke;
+    margin-bottom: 20px;
+    font-weight: bolder;
 }
