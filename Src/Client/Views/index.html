@@ -33,18 +33,19 @@
 
             <!--Section where user can enter their search criteria-->
             <!--This will be layed out using CSS Flexbox (Vert)-->
-                <div id="search">
+                
                     <h2>Find Your Next Adventure</h2>
+                    <div id="search">
                     <form action="">
                         <!--The for label tag must match the input id tag to bind the 2 together-->
-                        <label for="destination">Destination</label>
-                        <input type="text" id="destination" name="destination">
-                        <label for="departure">Departure</label>
-                        <input type="date" id="departure" name="departure">
-                        <label for="arrival">Arrival</label>
-                        <input type="date" id="arrival" name="arrival">
-                        <button>Search</button>
-                        <button>Reset</button>
+                        <label for="destination" id="destinationLabel" class="label">Destination</label>
+                        <input type="text" id="destination" class="inputField" name="destination">
+                        <label for="departure" id="departureLabel" class="label">Departure</label>
+                        <input type="date" id="departure" class="inputField" name="departure">
+                        <label for="arrival" id="arrivalLabel" class="label">Arrival</label>
+                        <input type="date" id="arrival" class="inputField" name="arrival">
+                        <button id="searchButton" class="button">Search</button>
+                        <button id="resetButton" class="button">Reset</button>
                     </form>
                 </div>  
             </div>
