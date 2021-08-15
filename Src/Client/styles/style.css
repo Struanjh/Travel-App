@@ -65,8 +65,21 @@ body {
 
 /*SEARCH SECTION*/
 
+
+h2 {
+    font-size: 2.5vw;
+    font-size: 5vh;
+    color: whitesmoke;
+    font-weight: bolder;
+    margin: 20px auto 50px auto;
+    width: 40%;
+    text-align: center;
+}
+
+
 form {
     margin: auto;
+    background-color: #828287;
     border: 2px solid;
     border-radius: 10px 10px 0px 0px;
     width: 30%;
@@ -74,16 +87,16 @@ form {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    place-items: center;
+    align-items: center;
 }
 
-h2 {
-    font-size: 50px;
-    color: whitesmoke;
-    font-weight: bolder;
-    margin: 20px auto 50px auto;
-    width: 40%;
-    text-align: center;
+form .inputField {
+    width: 60%;
+    height: 60%;
+}
+
+form .label {
+    align-self: end;
 }
 
 form #destinationLabel {
