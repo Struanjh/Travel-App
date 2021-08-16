@@ -103,10 +103,22 @@ form {
 }
 
 form .button {
-  height: 30%;
-  width: 50%;
+  height: 40%;
+  width: 40%;
   place-self: center;
-  background-color: #E4B363;
+  background-color: #E0DFD5;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+form .button:hover {
+  background-color: whitesmoke;
+  font-size: 1.1rem;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 form .inputField {
@@ -191,5 +203,43 @@ form #resetButton {
   -ms-grid-row: 7;
   -ms-grid-row-span: 2;
   grid-row: 7/9;
+}
+
+form .fa-globe-asia {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  place-self: center;
+}
+
+form .fa-plane-departure {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4/5;
+  place-self: center;
+}
+
+form .fa-plane-arrival {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 1;
+  grid-row: 6/7;
+  place-self: center;
+}
+
+form .fas {
+  color: #E0DFD5;
+}
+
+form .fas:hover {
+  color: whitesmoke;
 }
 /*# sourceMappingURL=style.css.map */

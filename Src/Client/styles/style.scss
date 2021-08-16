@@ -103,10 +103,21 @@ form {
 }
 
 form .button {
-    height: 30%;
-    width: 50%;
+    height: 40%;
+    width: 40%;
     place-self: center;
-    background-color: $color5;
+    background-color: $color2;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+
+    &:hover {
+        background-color: whitesmoke;
+        font-size: 1.1rem;
+        transition: 0.8s;
+    }
 }
 
 form .inputField {
@@ -157,4 +168,30 @@ form #searchButton {
 form #resetButton {
     grid-column: 3/5;
     grid-row: 7/9;
+}
+
+form .fa-globe-asia {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    place-self: center;
+}
+
+form .fa-plane-departure {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    place-self: center;
+}
+
+form .fa-plane-arrival {
+    grid-column: 1/2;
+    grid-row: 6/7;
+    place-self: center;
+}
+
+form .fas {
+    color: $color2;
+}
+
+form .fas:hover {
+    color: whitesmoke;
 }
