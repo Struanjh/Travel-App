@@ -39,13 +39,13 @@
                     <form action="">
                         <!--The for label tag must match the input id tag to bind the 2 together-->
                         <label for="destination" id="destinationLabel" class="label">Destination</label>
-                        <input type="text" id="destination" class="inputField" name="destination">
+                        <input type="text" placeholder="Select Destination" id="destination" class="inputField" name="destination">
                         <label for="departure" id="departureLabel" class="label">Departure</label>
                         <input type="date" id="departure" class="inputField" name="departure">
                         <label for="arrival" id="arrivalLabel" class="label">Arrival</label>
                         <input type="date" id="arrival" class="inputField" name="arrival">
-                        <button id="searchButton" class="button">Search</button>
-                        <button id="resetButton" class="button">Reset</button>
+                        <input id="searchButton" class="button" type="submit" name="input" value="Search">
+                        <input id="resetButton" class="button" type="submit" name="input" value="Reset">
                     </form>
                 </div>  
             </div>
