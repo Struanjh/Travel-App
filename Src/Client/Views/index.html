@@ -15,6 +15,7 @@
             @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
         </style>
         <script src="https://kit.fontawesome.com/0303ad95d9.js" crossorigin="anonymous"></script>
+        <script src="js/app.js"></script>
     </head>
     <body>
 
@@ -26,8 +27,8 @@
                     <h1>Go Explore . . .</h1>
                     <nav>
                         <ul class="nav">
-                            <li>Search</li>
-                            <li>Results</li>
+                            <li class="search">Search</li>
+                            <li class="results">Results</li>
                         </ul>
                     </nav>
                 </header>
@@ -36,7 +37,7 @@
             <!--This will be layed out using CSS Grid-->
                 
                 <h2>Find Your Next Adventure</h2>
-                <div id="search">
+                <div class="search">
                     <form action="">
                         <!--The for label tag must match the input id tag to bind the 2 together-->
                         <i class="fas fa-globe-asia fa-2x"></i>
@@ -58,7 +59,7 @@
 
         <!--Results section where API Results will be returned to the user-->
         <!--This will be layed out using CSS Grid-->
-        <div class="results-container">
+        <div class="results">
             <div class="results-card">
                 <img src="../images/city_image_4.jpg" alt="">
                 <div class="results-content">
@@ -75,6 +76,7 @@
             </div>    
         </div>
     </body>
+
 </html>
 
 
