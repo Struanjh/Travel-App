@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -33,10 +33,10 @@
                 </header>
 
             <!--Section where user can enter their search criteria-->
-            <!--This will be layed out using CSS Flexbox (Vert)-->
+            <!--This will be layed out using CSS Grid-->
                 
-                    <h2>Find Your Next Adventure</h2>
-                    <div id="search">
+                <h2>Find Your Next Adventure</h2>
+                <div id="search">
                     <form action="">
                         <!--The for label tag must match the input id tag to bind the 2 together-->
                         <i class="fas fa-globe-asia fa-2x"></i>
@@ -58,38 +58,24 @@
 
         <!--Results section where API Results will be returned to the user-->
         <!--This will be layed out using CSS Grid-->
-        <div class="container">
-            <div id="results">
-                <div class="card">
-                    <img src="" alt="">
-                    <div class="container">
+        <div class="results-container">
+            <div class="results-card">
+                <img src="../images/city_image_4.jpg" alt="">
+                <div class="results-content">
                         <h4><b>Name of City Here</b></h4>
                         <p>Details about the weather can go here</p>
-                    </div>
-                </div>  
-                <div class="card">
-                    <img src="" alt="">
-                    <div class="container">
-                        <h4><b>Name of City 2 Here</b></h4>
+                </div>
+            </div> 
+            <div class="results-card">
+                <img src="../images/city_image_3.jpg" alt="">
+                <div class="results-content">
+                        <h4><b>Name of City Here</b></h4>
                         <p>Details about the weather can go here</p>
-                    </div>
-                </div>  
-            </div>
+                </div>
+            </div>    
         </div>
     </body>
 </html>
 
 
- <!--https://www.w3schools.com/howto/howto_css_cards.asp-->
-
- <!-- EXAMPLE STYLING FOR CARD TAKEN FROM LINK ABOVE
-     .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
-  }
-  
-  /* Add rounded corners to the top left and the top right corner of the image */
-  img {
-    border-radius: 5px 5px 0 0;
-  }-->
+ 

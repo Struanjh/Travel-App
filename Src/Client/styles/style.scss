@@ -26,6 +26,7 @@ Here we set all elements to 0 padding and margin by default, this is known as a 
     background-size: cover;
     background-position: center;
     filter: grayscale(40%);
+    margin-bottom: 70px;
 }
 
 body {
@@ -194,4 +195,28 @@ form .fas {
 
 form .fas:hover {
     color: whitesmoke;
+}
+
+/*RESULTS SECTION*/
+.results-container {
+    margin-bottom: 50px;
+}
+
+.results-card {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 30px auto 30px auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.results-card img {
+    max-width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.results-content {
+    padding: 20px;
 }

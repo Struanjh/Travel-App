@@ -17,6 +17,7 @@ Here we set all elements to 0 padding and margin by default, this is known as a 
   background-position: center;
   -webkit-filter: grayscale(40%);
           filter: grayscale(40%);
+  margin-bottom: 70px;
 }
 
 body {
@@ -241,5 +242,36 @@ form .fas {
 
 form .fas:hover {
   color: whitesmoke;
+}
+
+/*RESULTS SECTION*/
+.results-container {
+  margin-bottom: 50px;
+}
+
+.results-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 35%;
+  margin: 30px auto 30px auto;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.results-card img {
+  max-width: 100%;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.results-content {
+  padding: 20px;
 }
 /*# sourceMappingURL=style.css.map */
