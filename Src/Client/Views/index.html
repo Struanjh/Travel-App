@@ -27,8 +27,8 @@
                     <h1>Go Explore . . .</h1>
                     <nav>
                         <ul class="nav">
-                            <li class="search"><a>Search</a></li>
-                            <li class="results"><a>Results</a></li>
+                            <li class="search"><a href="#search">Search</a></li>
+                            <li class="results"><a href="#results">Results</a></li>
                         </ul>
                     </nav>
                 </header>
@@ -37,7 +37,7 @@
             <!--This will be layed out using CSS Grid-->
                 
                 <h2>Find Your Next Adventure</h2>
-                <div class="search">
+                <div id="search">
                     <form action="">
                         <!--The for label tag must match the input id tag to bind the 2 together-->
                         <i class="fas fa-globe-asia fa-2x"></i>
@@ -59,7 +59,7 @@
 
         <!--Results section where API Results will be returned to the user-->
         <!--This will be layed out using CSS Grid-->
-        <div class="results">
+        <div id="results">
             <div class="results-card">
                 <img src="../images/city_image_4.jpg" alt="">
                 <div class="results-content">

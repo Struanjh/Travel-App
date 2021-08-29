@@ -75,6 +75,11 @@ body {
     padding: 20px;
 }
 
+.header ul.nav li a {
+   text-decoration: none;
+   color: whitesmoke;
+}
+
 /*SEARCH SECTION*/
 
 
@@ -198,7 +203,7 @@ form .fas:hover {
 }
 
 /*RESULTS SECTION*/
-.results {
+#results {
     margin-bottom: 50px;
 }
 
@@ -219,4 +224,9 @@ form .fas:hover {
 
 .results-content {
     padding: 20px;
+}
+
+
+#pink {
+    color: pink;
 }

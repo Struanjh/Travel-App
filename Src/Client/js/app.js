@@ -5,7 +5,7 @@
 
 //NEW//
 //STORE navitems in list//
-const navItems = document.querySelectorAll('nav li');
+/*const navItems = document.querySelectorAll('nav li');
 const divs = document.querySelectorAll('div');
 
 //Note below function assumes the target section has same class or id name as the link being clicked on
@@ -13,11 +13,9 @@ const divs = document.querySelectorAll('div');
 for (navItem of navItems) {
     //Set clickTarget as current navItem
     const clickTarget = navItem;
-    //Set scrollTarget as div with corresponding className
-    //-> 2 Steps to do this
-    //1 Store className of current navItem in variable
+    //Get NavItem ClassName (which will be same as target ID)
     const targetClass = navItem.className;
-    //2 Select div with equivalent className to current navItem
+    //Set the scrolltarget
     const scrollTarget = divs.targetClass;
     //Call Smoothscroll function
     smoothScroll(clickTarget, scrollTarget);
@@ -28,4 +26,17 @@ function smoothScroll(clickTarget, scrollTarget) {
         e.preventDefault;
         scrollTarget.scrollIntoView({behaviour: "smooth"})
     })
-}
+}*/
+
+var navs = document.getElementsByTagName('li');
+var sNav = navs[0];
+var rNav = navs[1];
+
+sNav.id = 'pink';
+rNav.id = 'pink';
+
+   /* searchNav.addEventListener('click',(e)=>{
+    e.preventDefault;
+    searchNav.scrollIntoView({behaviour: "smooth"});
+})*/
+
