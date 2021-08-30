@@ -1,42 +1,22 @@
 
-//FUNCTIONALITy - Smooth Scroll Behaviour
+//FUNCTIONALITy 1 - Smooth Scroll Behaviour
 
-//alert("Script working!");//
+//Store Variables
+const searchNav = document.querySelector('li.search');
+const searchTarget = document.getElementById('search');
+const resultsNav = document.querySelector('li.results');
+const resultsTarget = document.getElementById('results');
 
-//NEW//
-//STORE navitems in list//
-/*const navItems = document.querySelectorAll('nav li');
-const divs = document.querySelectorAll('div');
 
-//Note below function assumes the target section has same class or id name as the link being clicked on
-//Loop through each navItem
-for (navItem of navItems) {
-    //Set clickTarget as current navItem
-    const clickTarget = navItem;
-    //Get NavItem ClassName (which will be same as target ID)
-    const targetClass = navItem.className;
-    //Set the scrolltarget
-    const scrollTarget = divs.targetClass;
-    //Call Smoothscroll function
-    smoothScroll(clickTarget, scrollTarget);
-}
+//Add event listeners to nav li's and call function
+searchNav.addEventListener('click', smoothScroll(e, searchTarget));
+resultsNav.addEventListener('click', smoothScroll(e, resultsTarget));
 
-function smoothScroll(clickTarget, scrollTarget) {
-    clickTarget.addEventListener('click', (e)=>{
-        e.preventDefault;
-        scrollTarget.scrollIntoView({behaviour: "smooth"})
-    })
-}*/
 
-var navs = document.getElementsByTagName('li');
-var sNav = navs[0];
-var rNav = navs[1];
+//Smoothscroll function
+function smoothScroll(event, targetDestination) {
+    event.preventDefault;
+    targetDestination.scrollIntoView({behaviour: "smooth"});
+};
 
-sNav.id = 'pink';
-rNav.id = 'pink';
-
-   /* searchNav.addEventListener('click',(e)=>{
-    e.preventDefault;
-    searchNav.scrollIntoView({behaviour: "smooth"});
-})*/
-
+//FUNCTIONALITY 2 - Identify the current section of page on nav menu

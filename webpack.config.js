@@ -1,0 +1,8 @@
+//This file is used to over-ride default webpack configuration settings
+//This file must remain in the project root folder
+
+const path = require("path")
+const webpack = require("webpack")
+module.exports = {
+    entry: './src/client/index.js'
+}
