@@ -4,4 +4,4 @@
 //It should also import the .scss file
 //Event Listeners can't go in app.js
 
-alert('I exist!!');
+alert('I exist & Im updated!!');
