@@ -6,10 +6,12 @@
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-merge": "^5.8.0"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "dev": "webpack-dev-server --config webpack.dev.js --open",
+    "prod": "webpack --config webpack.prod.js"
   },
   "name": "travel-app",
   "version": "1.0.0",
@@ -99,7 +101,6 @@
     "uri-js": "^4.4.1",
     "v8-compile-cache": "^2.3.0",
     "watchpack": "^2.2.0",
-    "webpack-merge": "^5.8.0",
     "webpack-sources": "^3.2.0",
     "which": "^2.0.2",
     "wildcard": "^2.0.0",
