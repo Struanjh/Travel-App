@@ -104,6 +104,7 @@
     "uri-js": "^4.4.1",
     "v8-compile-cache": "^2.3.0",
     "watchpack": "^2.2.0",
+    "webpack-dev-server": "^4.1.0",
     "webpack-sources": "^3.2.0",
     "which": "^2.0.2",
     "wildcard": "^2.0.0",
