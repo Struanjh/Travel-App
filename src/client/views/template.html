@@ -1,0 +1,76 @@
+<!--Template file which will be used as base when we build the app using webpack-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Travel App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../styles/style.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+        </style>
+        <script src="https://kit.fontawesome.com/0303ad95d9.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <!--Header Section -> containing a title and simple navbar with 2 items-->
+        <!--This will be layed out using CSS Flexbox (Horiz)-->
+        <div class="image--container">
+            <div class="container">
+                <header class="header">
+                    <h1>Go Explore . . .</h1>
+                    <nav>
+                        <ul class="nav">
+                            <li class="search"><a href="#search">Search</a></li>
+                            <li class="results"><a href="#results">Results</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+            <!--Section where user can enter their search criteria-->
+            <!--This will be layed out using CSS Grid-->
+                
+                <h2>Find Your Next Adventure</h2>
+                <div id="search">
+                    <form action="">
+                        <!--The for label tag must match the input id tag to bind the 2 together-->
+                        <i class="fas fa-globe-asia fa-2x"></i>
+                        <label for="destination" id="destinationLabel" class="label">Destination</label>
+                        <input type="text" placeholder="Select Destination" id="destination" class="inputField" name="destination">
+                        <i class="fas fa-plane-departure fa-2x"></i>
+                        <label for="departure" id="departureLabel" class="label">Departure</label>
+                        <input type="date" id="departure" class="inputField" name="departure">
+                        <i class="fas fa-plane-arrival fa-2x"></i>
+                        <label for="arrival" id="arrivalLabel" class="label">Arrival</label>
+                        <input type="date" id="arrival" class="inputField" name="arrival">
+                        <input id="searchButton" class="button" type="submit" name="input" value="Search">
+                        <input id="resetButton" class="button" type="submit" name="input" value="Reset">
+                    </form>
+                </div>  
+            </div>
+        </div>
+
+
+        <!--Results section where API Results will be returned to the user-->
+        <!--This will be layed out using CSS Grid-->
+        <div id="results">
+            <div class="results-card">
+                <img src="../media/city_image_4.jpg" alt="">
+                <div class="results-content">
+                        <h4><b>Name of City Here</b></h4>
+                        <p>Details about the weather can go here</p>
+                </div>
+            </div> 
+            <div class="results-card">
+                <img src="../media/city_image_3.jpg" alt="">
+                <div class="results-content">
+                        <h4><b>Name of City Here</b></h4>
+                        <p>Details about the weather can go here</p>
+                </div>
+            </div>    
+        </div>
+    </body>
+
+</html>

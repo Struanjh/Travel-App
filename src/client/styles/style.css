@@ -11,7 +11,7 @@ Here we set all elements to 0 padding and margin by default, this is known as a 
 
 /*VH = Viewport height - viewable screen split into 100 portions*/
 .image--container {
-  background-image: url(../images/city_image_2.jpg);
+  background-image: url(../media/city_image_2.jpg);
   height: 100vh;
   background-size: cover;
   background-position: center;

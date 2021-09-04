@@ -11,11 +11,13 @@ module.exports = {
     //devtool: "none",
     entry: './src/client/index.js',
     output: {
-        filename: "main.[contentHash].js", //Cache Busting - contentHash prevents browser caching the page by creating new filename (with a hash) each time we build the app
+        filename: "main.[contenthash].js", //Cache Busting - contentHash prevents browser caching the page by creating new filename (with a hash) each time we build the app
         path: path.resolve(__dirname, "dist")
     },
 
-    plugins: [new HtmlWebpackPlugin()],
+    plugins: [new HtmlWebpackPlugin({
+        template: "./src/client/views/template.html"
+    })], //Creates html file each time we build with link to webpack js file
 
     module: {
         rules: [
