@@ -3,13 +3,15 @@
 
 const path = require("path");
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const common = require("./webpack.config");
+const merge = require("webpack-merge");
 
 
-module.exports = {
+
+module.exports = merge(common, {
     mode: "production",
     output: {
         filename: "main.[contenthash].js", //Cache Busting - contentHash prevents browser caching the page by creating new filename (with a hash) each time we build the app
         path: path.resolve(__dirname, "dist")
     }
-};
+});
