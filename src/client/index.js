@@ -4,7 +4,13 @@
 //It should also import the .scss file
 //Event Listeners can't go in app.js
 
-import "./styles/style.scss"
+import "./styles/style.scss";
 
 
-alert('I exist & Im updated!!');
+import "./media/city_image_1.jpg"
+import "./media/city_image_2.jpg"
+import "./media/city_image_3.jpg"
+import "./media/city_image_4.jpg"
+
+
+alert('I exist & Im updated 2!!');

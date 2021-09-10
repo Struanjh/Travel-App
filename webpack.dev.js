@@ -1,5 +1,6 @@
 //xx
 
+//Required so we can specify the path where we want to place the output file
 const path = require("path");
 const webpack = require("webpack");
 const { merge } = require("webpack-merge");
@@ -11,6 +12,7 @@ module.exports = merge(common, {
     mode: "development",
     output: {
         filename: "main.js", 
+        //Output file will go to the current directory inside new folder called dist
         path: path.resolve(__dirname, "dist")
     },
     plugins: [
@@ -25,6 +27,7 @@ module.exports = merge(common, {
                 test: /\.scss$/,
                 use: [
                     //Order runs from last to first in the list
+                    //So in dev mode there is no seperate css file - styling directly injected into DOM via js in main.js
                     "style-loader",  //style loader takes the converted js and injects it into the DOM
                     "css-loader",    //css loader takes css and converts it into js
                     "sass-loader"   //sass loader turns sass into css
@@ -32,4 +35,4 @@ module.exports = merge(common, {
                     }
                 ]
             }
-});
+    });

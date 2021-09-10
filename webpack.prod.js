@@ -33,12 +33,12 @@ module.exports = merge(common, {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({filename: "[name].[contentHash].css"}),
+        new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}),
         new CleanWebpackPlugin()
     ],
     module: {
         rules: [
-            {
+                {
                 test: /\.scss$/,
                 use: [
                     //Order runs from last to first in the list
@@ -46,7 +46,7 @@ module.exports = merge(common, {
                     "css-loader",    //css loader takes css and converts it into js
                     "sass-loader"   //sass loader turns sass into css
                 ]
-            },
-                ]
-    }
+                },
+            ]
+        }
 });
