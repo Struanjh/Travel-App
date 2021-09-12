@@ -1,41 +1,27 @@
 
-//FUNCTIONALITy 1 - Smooth Scroll Behaviour
-
-//Store Variables
-const searchNav = document.querySelector('li.search');
-const searchTarget = document.getElementById('search');
-const resultsNav = document.querySelector('li.results');
-const resultsTarget = document.getElementById('results');
-
-
-//Add event listeners to nav li's and call function
-searchNav.addEventListener('click', smoothScroll(e, searchTarget));
-resultsNav.addEventListener('click', smoothScroll(e, resultsTarget));
-
-
-//Smoothscroll function
-function smoothScroll(event, targetDestination) {
-    event.preventDefault;
-    targetDestination.scrollIntoView({behaviour: "smooth"});
-};
 
 //FUNCTIONALITY 2 - Identify the current section of page on nav menu
 
 
 
+//Listen for user clicking submit button event, then call the asynnch function handleSubmit
+const userCitySelection = document.getElementById('destination');
+const userSearchSubmit = document.getElementById('searchButton');
+userSearchSubmit.addEventListener('click', handleSubmit);
+
 
 //'BRAIN FUNCTION - CONTROLLING FLOW OF WHOLE PROGRAMME WITH CHAINED PROMISES
-const userCitySelection = document.getElementById('destination');
-
 async function handleSubmit(event) {
 
+    //1) Call Geonames API to get latitude and longitude for the city the user selected
     const geoNamesData = await callGeoNames('http://localhost:8000/callGeoNames', userCitySelection)
     //Promise chaining
     //Once that data is returned - convert to JSON 
+    .then(geoNamesData => geoNamesData.json())
     //Then call the OpenWeather API
     //Then call the Pixabay API
     //Then update the UI
-
+  
 }
 
 
@@ -59,6 +45,7 @@ export async function callGeoNames(url, userInput) {
 
 ///NEED TO UPDATE THIS SECTION
 
+//WE WANT TO GET LATITUDE, LONGITUDE AND COUNTRY!!
 
 // Updates the UI so user can see the result of analysis
 function updateUI(response) {
@@ -69,5 +56,4 @@ function updateUI(response) {
 }
 
 
-export { handleSubmit }
-export { updateUI }
+

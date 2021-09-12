@@ -1,15 +1,36 @@
 
 //REQUIRE NPM PACKAGES
 
+//Express is needed to run the server and set up route handlers
+const express = require('express')
+//Cross-origin-allowance - required when making requests across different domains
+const cors = require('cors');
+//An extra middle-ware layer used to handle POST Requests (by parsing the returned data)
+const bodyParser = require('body-parser');
+//Allows for window.fetch compatible API on node.js runtime
+const fetch = require('node-fetch');
+
+
 
 //USE EXPRESS TO CREATE APP INSTANCE AND CONFIGURE THE APP (Express = Node.js library)
-
+const app = express();
+//Explaining how we want the data to be dealt with  
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(cors());
+//This directs the server to the folder we want to use to run the client-side code
+app.use(express.static('dist'))
 
 //SPIN UP SERVER
+const port = 8000;
+const server = app.listen(port, listening);
+function listening() {
+    console.log("server running");
+    console.log(`running on local host: ${port}`);
+};
 
 
-
-//DYNAMICALLY BUILDING URL's
+//DYNAMICALLY BUILDING API URL's
 
 //Geonames URL Format: http://api.geonames.org/searchJSON?q=london&maxRows=10&username=demo
 
@@ -19,9 +40,19 @@ const geonamesUsername = '&username=Struan94';
  
 
 
-//Set Up Get Routes
+//GET ROUTES
 
-//Set Up Post Routes
+//- When get request is made to root folder, serve the home page browser
+app.get('/', function (req, res) {
+    res.sendFile('dist/index.html');
+})
+
+//Insert test Get Route here//
+
+
+
+
+//POST ROUTES
 
 //GEONAMES POST ROUTE -- when post request received to this route, callGeoNames function executes
 app.post('/callGeoNames', callGeoNames);
