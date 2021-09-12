@@ -1,8 +1,5 @@
 
 
-//FUNCTIONALITY 2 - Identify the current section of page on nav menu
-
-
 
 //Listen for user clicking submit button event, then call the asynnch function handleSubmit
 const userCitySelection = document.getElementById('destination');
@@ -21,7 +18,7 @@ async function handleSubmit(event) {
     //Then call the OpenWeather API
     //Then call the Pixabay API
     //Then update the UI
-  
+
 }
 
 
