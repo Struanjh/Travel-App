@@ -55,11 +55,11 @@ app.get('/', function (req, res) {
 //POST ROUTES
 
 //GEONAMES POST ROUTE -- when post request received to this route, callGeoNames function executes
-app.post('/callGeoNames', callGeoNames);
+app.post('/callGeoNames', getGeoNamesData);
 
 
 //Note use of async keyword. THis gives access to await, try, catch - asynchronous function keywords
-async function callGeoNames(req, res){
+async function getGeoNamesData(req, res){
 //Log out the URL the user requested for convenience and debugging
 console.log(`User has requested the following URL: ${req.body}`);
 //Dynamically build the GeoNames API URL
@@ -68,7 +68,7 @@ const geonamesUrl = geonamesUrlRoot + req.body.userCitySelection + geonamesMaxRo
 console.log(geonamesUrl);
 
 //MAKE THE FETCH REQUEST TO THE GEONAMES API & WAIT FOR A RESPONSE
-const geonamesResponse = await fetch(url);
+const geonamesResponse = await fetch(geonamesUrl);
 
 //IF THE RESPONSE IS SUCCESSFUL (PROMISE RESOLVES) - EXECUTE TRY CODE BLOCK
 try {
