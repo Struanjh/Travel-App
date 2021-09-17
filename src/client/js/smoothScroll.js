@@ -8,6 +8,7 @@ const resultsNav = document.querySelector('li.results');
 const resultsTarget = document.getElementById('results');
 
 
+
 //Add event listeners to nav li's and call function
 searchNav.addEventListener('click', smoothScroll(e, searchTarget));
 resultsNav.addEventListener('click', smoothScroll(e, resultsTarget));

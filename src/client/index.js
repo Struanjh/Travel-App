@@ -15,5 +15,6 @@ import "./media/city_image_4.jpg"
 import { smoothScroll } from "./js/smoothScroll.js";
 import { updateUI } from "./js/app.js";
 import { handleSubmit } from "./js/app.js";
+import { countDown } from "./js/countDown.js";
 
 alert('I exist & Im updated 2!!');

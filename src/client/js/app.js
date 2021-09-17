@@ -1,16 +1,20 @@
 
-
-
 //Listen for user clicking submit button event, then call the async function handleSubmit
 const userCitySelection = document.getElementById('destination');
 const userSearchSubmit = document.getElementById('searchButton');
 userSearchSubmit.addEventListener('click', handleSubmit);
 
 
+
+
+
+
+
 //'BRAIN FUNCTION - CONTROLLING FLOW OF WHOLE PROGRAMME WITH CHAINED PROMISES
 async function handleSubmit(event) {
-
-    //1) Call Geonames API to get latitude and longitude for the city the user selected
+    //Call Countdown timer function to days until departure
+    const daysToDepart = countDown(departDate, currentDate, oneDay);
+    //Call Geonames API to get latitude and longitude for the city the user selected
     const geoNamesData = await callGeoNames('http://localhost:8000/callGeoNames', userCitySelection)
     //Promise chaining
     //Once that data is returned - convert to JSON 
