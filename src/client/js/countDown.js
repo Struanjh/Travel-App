@@ -19,6 +19,7 @@
     const daystoDeparture =  currentDate - departDate;
 } */
 
+
 //Calculate One Day in milliseconds
 const oneDay = 1000*60**24;
 //Gives current time
@@ -35,9 +36,8 @@ function countDown(departDate, currentDate, oneDay) {
 const daysToDepart = Math.round(departDate.getTime() - currentDate.getTime()) / (oneDay);
 //Convert result to 0 decimal places
 const daysToDepartRounded = daysToDepart.toFixed(0);
+console.log(daysToDepartRounded);
 
 };
-
-
 
 export { countDown };
