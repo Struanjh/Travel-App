@@ -1,7 +1,7 @@
 
 
 //Calculate One Day in milliseconds
-const oneDay = 1000*60**24;
+const oneDay = 1000*60*24;
 //Gives current time
 const currentDate = new Date();
 //Get the date user selected as a data value

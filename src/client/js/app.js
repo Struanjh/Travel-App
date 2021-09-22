@@ -7,19 +7,17 @@ userSearchSubmit.addEventListener('click', handleSubmit);
 
 
 
-
-
-
 //'BRAIN FUNCTION - CONTROLLING FLOW OF WHOLE PROGRAMME WITH CHAINED PROMISES
 async function handleSubmit(event) {
     //Call Countdown timer function to days until departure
-    const daysToDepart = countDown(departDate, currentDate, oneDay);
+    //const daysToDepart = await countDown(departDate, currentDate, oneDay);
     //Call Geonames API to get latitude and longitude for the city the user selected
     const geoNamesData = await callGeoNames('http://localhost:8000/callGeoNames', userCitySelection)
     //Promise chaining
-    //Once that data is returned - convert to JSON 
+    //Once that data is returned - convert from String to JSON 
     .then(geoNamesData => geoNamesData.json())
     //Then call the OpenWeather API
+    //.then(await callWeatherBit('http://localhost:8000/callWeatherBit', latitude, longitude))
     //Then call the Pixabay API
     //Then update the UI
     .then(
@@ -45,6 +43,13 @@ export async function callGeoNames(url, userInput) {
 //Once the response is received from server.js, return the response which will be stored in variable geonamesData & then converted to json
     return response
 }
+
+
+//API Call Number 2 - Weatherbit
+
+/*export async function callWeatherBit(url, latitude, longitude) {
+
+}*/
 
 
 //WE WANT TO GET LATITUDE, LONGITUDE AND COUNTRY!!
