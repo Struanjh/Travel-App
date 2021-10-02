@@ -17,4 +17,8 @@ import { updateUI } from "./js/app.js";
 import { handleSubmit } from "./js/app.js";
 import { countDown } from "./js/countDown.js";
 
-alert('I exist & Im updated 2!!');
+
+//Listen for user clicking submit button event, then call the async function handleSubmit
+const userCitySelection = document.getElementById('destination');
+const userSearchSubmit = document.getElementById('searchButton');
+userSearchSubmit.addEventListener('click', handleSubmit);
