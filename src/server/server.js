@@ -38,8 +38,9 @@ const geonamesUrlRoot = 'http://api.geonames.org/searchJSON?q=';
 const geonamesMaxRows = '&maxRows=10';
 const geonamesUsername = '&username=Struan94';
  
-//Weatherbit API
+//API Keys
 const weatherBitKey = '1b0c8200ea404b3a86e03b1f12027712';
+const pixaBayKey = '23681210-8dd7dc008b4f5966e8882bf52';
 
 //GET ROUTES
 
@@ -114,7 +115,7 @@ res.send(geonamesData);
     //Departure date is more than 7 days away so get future forecast
     let weatherBitData = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?lat=${req.body.latitude}&lon=${req.body.longitude}&key=${weatherBitKey}`);    
     }
-    
+
    try {
     const weatherBitRes = await weatherBitData.json();
     if(weatherBitRes.status.code == 0) {
@@ -122,8 +123,29 @@ res.send(geonamesData);
         res.send(weatherBitRes);
         }
     }
-   catch {
+   catch(err) {
     console.log(err);
     res.send(err);
    }
  }
+
+
+ async function getPixabayData (req, res) {
+     //What parameters do we need to pass in to search for the image
+     //What does the request URL need to look like
+     //In what format is the image returned? Need to do anything to convert it?
+     //const pixabayQueryCountry  = `&q=${data.countryName}&orientation=horizontal&image_type=photo`;
+     const pixaBayImg = fetch(`https://pixabay.com/api/?key=${pixaBayKey}&q=${data.city}&orientation=horizontal&image_type=photo`);
+    
+     try {
+        const pixaBayImgJSON = await weatherBitData.json();
+        if(pixaBayImgJSON.status.code == 0) {
+            pixaBayImgJSON.message = "Data successfully retrieved!";
+            res.send(pixaBayImgJSON);
+            }
+        }
+       catch(err) {
+        console.log(err);
+        res.send(err);
+       }
+}

@@ -10,7 +10,7 @@ async function handleSubmit(event) {
     //Call Countdown timer function to days until departure
     const daysToDepart = await countDown(departDate, currentDate, oneDay);
     //Call Geonames API to get latitude and longitude for the city the user selected
-    const geoDataResponse = await callGeoNames('http://localhost:8000/callGeoNames', userCitySelection)
+    const geoDataResponse = await callGeoNames('http://localhost:8000/callGeoNames', userCitySelection);
     if(!geoDataResponse.ok) throw new Error('Issue getting geoNames data!!');
     //Once that data is returned - convert from String to JSON 
     const geoDataJSON = await geoNamesData.json();
@@ -21,12 +21,24 @@ async function handleSubmit(event) {
 
 
     //Then call the OpenWeather API
-    const weatherBitResponse = await callOpenWeather('http://localhost:8000/callWeatherBit', latitude, longitude);
+    const weatherBitResponse = await callWeatherBit('http://localhost:8000/callWeatherBit', latitude, longitude);
     if(!weatherBitResponse.ok) throw new Error('Issue getting weather data!!');
     const weatherDataJSON = await weatherBitResponse.json();
     console.log(weatherDataJSON);
+    //Store country and city returned from weatherBit API
+    const weatherBitCity = weatherDataJSON.city_name;
+    const weatherBitCountry = weatherDataJSON.country_code;
 
     //Then call the Pixabay API
+    const pixaBayResponse = await callPixaBay('http://localhost:8000/callPixaBay', weatherBitCity, weatherBitCountry);
+    if(!pixaBayResponse.ok) throw new Error('Issue getting city image!!');
+    const pixaBayResponseJSON = await pixaBayResponse.json();
+    console.log(pixaBayResponseJSON);
+    //Get URL of the returned Image
+    const pixaBayImgURL = pixaBayResponseJSON.webformatURL;
+
+
+
     //Then update the UI
     //UpdateUI(City Location, Temperature, Image, Weather Icon)
     }
@@ -37,9 +49,10 @@ async function handleSubmit(event) {
 }
 
 
-////////API Calls////////////
 
-//API Call Number 1 - Geonames
+////////POST DATA TO THE SERVER////////////
+
+//POST REQUEST 1 - Geonames
 export async function callGeoNames(url, userInput) {
     //Use Fetch to post the data to server.js post route - since we use await, the function will not complete until the promise has resolved (we receive a response)
     let response = await fetch(url, {
@@ -55,7 +68,7 @@ export async function callGeoNames(url, userInput) {
 }
 
 
-//API Call Number 2 - Weatherbit
+//POST REQUEST 2 - Weatherbit
 export async function callOpenWeather(url, latitude, longitude) {
     let response = await fetch(url, {
         method: 'POST',
@@ -65,10 +78,22 @@ export async function callOpenWeather(url, latitude, longitude) {
         },       
         body: JSON.stringify({latitude, longitude}),
     })
-//Once the response is received from server.js, return the response which will be stored in variable geonamesData & then converted to json
     return response
 }
 
+
+//POST REQUEST 3 - Pixabay
+export async function callPixaBay(url, city, country) {
+    let response = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },       
+        body: JSON.stringify({city, country}),
+    })
+    return response
+}
 
 
 
