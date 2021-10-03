@@ -105,11 +105,18 @@ res.send(geonamesData);
 */
 
  async function getWeatherBitData(req, res) {
-    //Build URL and make fetch request
-    const weatherBitData = await fetch(`https://api.weatherbit.io/v2.0/current?lat=${req.body.latitude}&lon=${req.body.longitude}&key=${weatherBitKey}&include=minutely`);
-
+   
+    //Test if departure data is more than 7 days in future and call appropriate API
+    if (daysToDepartRounded < 7) {
+    //Departure date less than 7 days away so get current weather
+    let weatherBitData = await fetch(`https://api.weatherbit.io/v2.0/current?lat=${req.body.latitude}&lon=${req.body.longitude}&key=${weatherBitKey}&include=minutely`);
+    } else {
+    //Departure date is more than 7 days away so get future forecast
+    let weatherBitData = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?lat=${req.body.latitude}&lon=${req.body.longitude}&key=${weatherBitKey}`);    
+    }
+    
    try {
-    weatherBitRes = await weatherBitData.json();
+    const weatherBitRes = await weatherBitData.json();
     if(weatherBitRes.status.code == 0) {
         weatherBitRes.message = "Data successfully retrieved!";
         res.send(weatherBitRes);
