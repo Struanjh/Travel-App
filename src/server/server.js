@@ -1,4 +1,6 @@
 
+import { handleSubmit } from '../Client/js/app';
+
 //REQUIRE NPM PACKAGES
 
 //Express is needed to run the server and set up route handlers
@@ -131,21 +133,25 @@ res.send(geonamesData);
 
 
  async function getPixabayData (req, res) {
-     //What parameters do we need to pass in to search for the image
-     //What does the request URL need to look like
-     //In what format is the image returned? Need to do anything to convert it?
-     //const pixabayQueryCountry  = `&q=${data.countryName}&orientation=horizontal&image_type=photo`;
-     const pixaBayImg = fetch(`https://pixabay.com/api/?key=${pixaBayKey}&q=${data.city}&orientation=horizontal&image_type=photo`);
+     let pixaBayImg = fetch(`https://pixabay.com/api/?key=${pixaBayKey}&q=${req.body.city}&orientation=horizontal&image_type=photo`);
     
      try {
-        const pixaBayImgJSON = await weatherBitData.json();
+        let pixaBayImgJSON = await pixaBayImg.json();
         if(pixaBayImgJSON.status.code == 0) {
-            pixaBayImgJSON.message = "Data successfully retrieved!";
+            pixaBayImgJSON.message = "City image successfully retrieved!";
             res.send(pixaBayImgJSON);
-            }
+        } else {
+        //Make fetch call using country code instead of City
+        let pixaBayImg = fetch(`https://pixabay.com/api/?key=${pixaBayKey}&q=${req.body.country}&orientation=horizontal&image_type=photo`);
+        let pixaBayImgJSON = await pixaBayImg.json();
+        pixaBayImgJSON.message = "Country image successfully retrieved!";
+        res.send(pixaBayImgJSON);
         }
+        }
+
        catch(err) {
         console.log(err);
         res.send(err);
        }
 }
+

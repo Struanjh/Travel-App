@@ -1,14 +1,18 @@
 
 
 
+import { countDown } from "./countdown";
+import { geonamesData } from "../../server/server";
+import { getWeatherBitData } from "../../server/server";
+import { getPixabayData } from "../../server/server";
 
 
 
 //'BRAIN FUNCTION - CONTROLLING FLOW OF WHOLE PROGRAMME WITH CHAINED PROMISES
-async function handleSubmit(event) {
+export async function handleSubmit(event) {
     try {
     //Call Countdown timer function to days until departure
-    const daysToDepart = await countDown(departDate, currentDate, oneDay);
+    const days = await countDown(departDate, currentDate, oneDay);
     //Call Geonames API to get latitude and longitude for the city the user selected
     const geoDataResponse = await callGeoNames('http://localhost:8000/callGeoNames', userCitySelection);
     if(!geoDataResponse.ok) throw new Error('Issue getting geoNames data!!');
@@ -28,16 +32,21 @@ async function handleSubmit(event) {
     //Store country and city returned from weatherBit API
     const weatherBitCity = weatherDataJSON.city_name;
     const weatherBitCountry = weatherDataJSON.country_code;
+    const weatherBitMinTemp = weatherDataJSON.min_temp;
+    const weatherBitMaxTemp = weatherDataJSON.max_temp;
+    const weatherBitDescription = weatherDataJSON.description;
+
 
     //Then call the Pixabay API
     const pixaBayResponse = await callPixaBay('http://localhost:8000/callPixaBay', weatherBitCity, weatherBitCountry);
     if(!pixaBayResponse.ok) throw new Error('Issue getting city image!!');
     const pixaBayResponseJSON = await pixaBayResponse.json();
-    console.log(pixaBayResponseJSON);
     //Get URL of the returned Image
-    const pixaBayImgURL = pixaBayResponseJSON.webformatURL;
+    const pixaBayImgURL = await pixaBayResponseJSON.webformatURL;
+    console.log(pixaBayImgURL);
 
-
+    //Call the Update UI with the response objects we have received from server and converted to JSON
+    updateUI(geoDataJSON, weatherDataJSON, pixaBayImgURL);
 
     //Then update the UI
     //UpdateUI(City Location, Temperature, Image, Weather Icon)
@@ -97,15 +106,21 @@ export async function callPixaBay(url, city, country) {
 
 
 
-/*
-// Updates the UI so user can see the result of analysis
-function updateUI(response) {
-    //Just logging the response for now to check if API call is working
-   //console.log(userCitySelection);
-   // console.log(response.latitude);
-   // console.log(response.longitude);
-}*/
+//////Try to log the results to the console for now...////////
+export const updateUI = (geo, weather, pixa) => {
+    console.log(
+        `Days until departue: ${days}
+        City User Selected: ${userCitySelection}
+        Geonames Latitude: ${latitude}
+        Geonames longitude: ${longitude}
+        Weatherbit city: ${weatherBitCity}
+        Weaterbit country: ${weatherBitCountry}
+        Weatherbit Minimum Temp ${weatherBitMinTemp}
+        Weatherbit Maximum Temp ${weatherBitMaxTemp}
+        Weatherbit Weather Description ${weatherBitDescription}
+        Pixabay Image ${pixaBayImgURL}`
+        )
+}
 
-export { updateUI };
-export { handleSubmit };
+
 

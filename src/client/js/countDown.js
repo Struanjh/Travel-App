@@ -1,4 +1,6 @@
 
+import { renderError } from './renderErrors.js';
+import { handleSubmit } from './app.js';
 
 //Calculate One Day in milliseconds
 const oneDay = 1000*60*24;
@@ -32,3 +34,4 @@ return daysToDepartRounded;
 };
 
 export { countDown };
+
