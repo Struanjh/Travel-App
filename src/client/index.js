@@ -13,9 +13,10 @@ import "./media/city_image_3.jpg"
 import "./media/city_image_4.jpg"
 
 import { smoothScroll } from "./js/smoothScroll.js";
+import { renderError } from "./js/renderErrors.js";
 import { updateUI } from "./js/app.js";
 import { handleSubmit } from "./js/app.js";
-import { countDown } from "./js/countDown.js";
+//import { countDown } from "./js/countDown.js";
 
 
 //Listen for user clicking submit button event, then call the async function handleSubmit

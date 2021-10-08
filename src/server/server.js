@@ -1,5 +1,5 @@
 
-import { handleSubmit } from '../Client/js/app';
+//import { handleSubmit } from '../Client/js/app';
 
 //REQUIRE NPM PACKAGES
 
@@ -155,3 +155,7 @@ res.send(geonamesData);
        }
 }
 
+
+//export { geonamesData }
+//export { getWeatherBitData }
+//export { getPixabayData }
