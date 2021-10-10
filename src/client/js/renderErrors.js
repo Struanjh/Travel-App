@@ -1,5 +1,9 @@
 
-const renderError = (errorMsg) => {
+import { countDown } from "./formInputValidator";
+
+export const renderError = (errorMsg) => {
     console.log(errorMsg);
-    //Create pop-up or display message here somewehre..
+    alert(errorMsg);
+    const errMsg = errorMsg;
+    return errMsg;
 }
