@@ -2,10 +2,6 @@
 
 
 import { countDown } from "./countdown";
-import { geonamesData } from "../../server/server";
-import { getWeatherBitData } from "../../server/server";
-import { getPixabayData } from "../../server/server";
-
 
 
 //'BRAIN FUNCTION - CONTROLLING FLOW OF WHOLE PROGRAMME WITH CHAINED PROMISES
@@ -123,4 +119,4 @@ export const updateUI = (geo, weather, pixa) => {
 }
 
 
-
+alert('Hello!');
