@@ -1,11 +1,12 @@
 
 
 
-import { countDown } from "./formInputValidator";
+import { countDown, inputValidation } from "./formInputValidator";
 
 
 //'BRAIN FUNCTION - CONTROLLING FLOW OF WHOLE PROGRAMME WITH CHAINED PROMISES
 export async function handleSubmit(event) {
+    event.preventDefault();
     try {
     //Call Countdown timer function to days until departure
     const days = await inputValidation();
@@ -117,7 +118,7 @@ export const updateUI = (geo, weather, pixa) => {
         Weatherbit Minimum Temp ${weatherBitMinTemp}
         Weatherbit Maximum Temp ${weatherBitMaxTemp}
         Weatherbit Weather Description ${weatherBitDescription}
-        Pixabay Image ${pixaBayImgURL}`
+        Pixabay Image: ${pixaBayImgURL}`
         )
 }
 
