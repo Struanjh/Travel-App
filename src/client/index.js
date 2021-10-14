@@ -20,6 +20,6 @@ import { handleSubmit } from "./js/app.js";
 
 
 //Listen for user clicking submit button event, then call the async function handleSubmit
-const userCitySelection = document.getElementById('destination');
+const userCitySelection = document.getElementById('destination').value;
 const userSearchSubmit = document.getElementById('searchButton');
 userSearchSubmit.addEventListener('click', handleSubmit);

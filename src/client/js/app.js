@@ -2,6 +2,7 @@
 
 
 import { countDown, inputValidation } from "./formInputValidator";
+import { renderError } from "./renderErrors";
 
 
 //'BRAIN FUNCTION - CONTROLLING FLOW OF WHOLE PROGRAMME WITH CHAINED PROMISES
@@ -9,7 +10,7 @@ export async function handleSubmit(event) {
     event.preventDefault();
     try {
     //Call Countdown timer function to days until departure
-    const days = await inputValidation();
+    const days = inputValidation();
     const daysDepart = days[0];
     const lengthOfTrip = days[1];
     
