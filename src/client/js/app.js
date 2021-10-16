@@ -8,9 +8,8 @@ import { inputValidation } from "./formInputValidator";
 export async function handleSubmit(event) {
     event.preventDefault();
     try {
-    //Call Countdown timer function to days until departure
     const userCitySelection = document.getElementById('destination').value;
-    const days = inputValidation();
+    const days = inputValidation(userCitySelection);
     const daysDepart = days[0];
     const lengthOfTrip = days[1];
     
