@@ -75,6 +75,7 @@
     "mime-db": "^1.49.0",
     "mime-types": "^2.1.32",
     "mimic-fn": "^2.1.0",
+    "moment": "^2.29.1",
     "neo-async": "^2.6.2",
     "node-fetch": "^3.0.0",
     "node-releases": "^1.1.75",

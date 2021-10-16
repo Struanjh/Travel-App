@@ -1,8 +1,7 @@
 
 
 
-import { countDown, inputValidation } from "./formInputValidator";
-import { renderError } from "./renderErrors";
+import { inputValidation } from "./formInputValidator";
 
 
 //'BRAIN FUNCTION - CONTROLLING FLOW OF WHOLE PROGRAMME WITH CHAINED PROMISES
@@ -10,10 +9,12 @@ export async function handleSubmit(event) {
     event.preventDefault();
     try {
     //Call Countdown timer function to days until departure
+    const userCitySelection = document.getElementById('destination').value;
     const days = inputValidation();
     const daysDepart = days[0];
     const lengthOfTrip = days[1];
     
+   
     //Call Geonames API to get latitude and longitude for the city the user selected
     const geoDataResponse = await callGeoNames('http://localhost:8000/callGeoNames', userCitySelection);
     if(!geoDataResponse.ok) throw new Error('Issue getting geoNames data!!');
@@ -54,7 +55,6 @@ export async function handleSubmit(event) {
     }
     catch(err) {
     console.log(err);
-    renderError(err.message);
     }
 }
 
