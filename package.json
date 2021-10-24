@@ -15,12 +15,14 @@
     "webpack-merge": "^5.8.0"
   },
   "scripts": {
+    "start": "node src/server/server.js",
     "dev": "webpack-dev-server --config webpack.dev.js --open",
     "prod": "webpack --config webpack.prod.js"
   },
   "name": "travel-app",
   "version": "1.0.0",
   "main": "webpack.config.js",
+  "type": "commonjs",
   "dependencies": {
     "acorn": "^8.4.1",
     "acorn-import-assertions": "^1.7.6",
@@ -84,6 +86,7 @@
     "p-limit": "^3.1.0",
     "p-locate": "^4.1.0",
     "p-try": "^2.2.0",
+    "path": "^0.12.7",
     "path-exists": "^4.0.0",
     "path-key": "^3.1.1",
     "path-parse": "^1.0.7",
