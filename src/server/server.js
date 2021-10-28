@@ -4,19 +4,14 @@
 //REQUIRE NPM PACKAGES
 
 //Express is needed to run the server and set up route handlers
-//const express = require('express')
-import { express } from "express";
+const express = require('express')
 //Cross-origin-allowance - required when making requests across different domains
-//const cors = require('cors');
-import { cors } from "cors";
+const cors = require('cors');
 //An extra middle-ware layer used to handle POST Requests (by parsing the returned data)
-//const bodyParser = require('body-parser');
-import { bodyParser } from "body-parser";
+const bodyParser = require('body-parser');
 //Allows for window.fetch compatible API on node.js runtime
-//const fetch = require('node-fetch');
-import { fetch } from "node-fetch";
-//const path = require('path');
-import { path } from "path";
+const fetch = require('node-fetch');
+const path = require('path');
 
 
 

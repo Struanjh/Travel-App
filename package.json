@@ -22,7 +22,6 @@
   "name": "travel-app",
   "version": "1.0.0",
   "main": "webpack.config.js",
-  "type": "commonjs",
   "dependencies": {
     "acorn": "^8.4.1",
     "acorn-import-assertions": "^1.7.6",
@@ -79,7 +78,7 @@
     "mimic-fn": "^2.1.0",
     "moment": "^2.29.1",
     "neo-async": "^2.6.2",
-    "node-fetch": "^3.0.0",
+    "node-fetch": "^2.6.2",
     "node-releases": "^1.1.75",
     "npm-run-path": "^4.0.1",
     "onetime": "^5.1.2",
