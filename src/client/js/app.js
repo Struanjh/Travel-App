@@ -9,19 +9,24 @@ export async function handleSubmit(event) {
     event.preventDefault();
     try {
     const userCitySelection = document.getElementById('destination').value;
+    //Call Input Validation function and pass in the user's city as an argument
     const days = inputValidation(userCitySelection);
     const daysDepart = days[0];
     const lengthOfTrip = days[1];
+    console.log(daysDepart);
+    console.log(lengthOfTrip);
     
    
     //Call Geonames API to get latitude and longitude for the city the user selected
     const geoDataResponse = await callGeoNames('http://localhost:8000/callGeoNames', userCitySelection);
     if(!geoDataResponse.ok) throw new Error('Issue getting geoNames data!!');
     //Once that data is returned - convert from String to JSON 
-    const geoDataJSON = await geoNamesData.json();
+    const geoDataJSON = await geoDataResponse.json();
     console.log(geoDataJSON);
-    const latitude = geoDataJSON.lat;
-    const longitude = geoDataJSON.lng;
+    const requiredObject = Object.keys(geoDataJSON)[1];
+    console.log(requiredObject);
+    const latitude = geoDataJSON.geonames[0].lat;
+    const longitude = geoDataJSON.geonames[0].lng;
     console.log(latitude, longitude);
 
 
