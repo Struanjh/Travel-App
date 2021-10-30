@@ -20,11 +20,9 @@ export async function handleSubmit(event) {
     //Call Geonames API to get latitude and longitude for the city the user selected
     const geoDataResponse = await callGeoNames('http://localhost:8000/callGeoNames', userCitySelection);
     if(!geoDataResponse.ok) throw new Error('Issue getting geoNames data!!');
-    //Once that data is returned - convert from String to JSON 
+    //Once that data is returned - convert from JSON (String) to JS Object
     const geoDataJSON = await geoDataResponse.json();
     console.log(geoDataJSON);
-    const requiredObject = Object.keys(geoDataJSON)[1];
-    console.log(requiredObject);
     const latitude = geoDataJSON.geonames[0].lat;
     const longitude = geoDataJSON.geonames[0].lng;
     console.log(latitude, longitude);

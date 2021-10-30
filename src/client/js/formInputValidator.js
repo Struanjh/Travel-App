@@ -12,7 +12,7 @@ const inputValidation = (userCitySelection) => {
     let currDateMS = Date.parse(currentDate);
     let arrivalDateMS = Date.parse(arrivalDate);
     let departDateMS = Date.parse(departDate);
-    console.log(`city: ${userCitySelection}`);
+    console.log(`City: ${userCitySelection}`);
     console.log(`departDate: ${departDate}`);
     console.log(`arriveDate: ${arrivalDate}`);
 
@@ -32,13 +32,12 @@ const inputValidation = (userCitySelection) => {
        throw new Error('Error! Departure Date must be in the future!');
         return;
     } else if (departDate > arrivalDate) {
-        throw new Error('Error! Departure date must be before arrival date!') 
+        throw new Error('Error! Departure date must be before arrival date!'); 
         return;
     } else {
         return [daysToDepart, tripLength];
     }
 };
-
 
 
 export { inputValidation };
