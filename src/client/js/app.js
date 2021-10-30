@@ -29,9 +29,10 @@ export async function handleSubmit(event) {
 
 
     //Then call the OpenWeather API
-    const weatherBitResponse = await callWeatherBit('http://localhost:8000/callWeatherBit', latitude, longitude);
+    const weatherBitResponse = await callWeatherBit('http://localhost:8000/callWeatherBit', daysDepart, latitude, longitude);
     if(!weatherBitResponse.ok) throw new Error('Issue getting weather data!!');
     const weatherDataJSON = await weatherBitResponse.json();
+    console.log("Weatherbit response converted to JS Object:");
     console.log(weatherDataJSON);
     //Store country and city returned from weatherBit API
     const weatherBitCity = weatherDataJSON.city_name;
@@ -81,16 +82,18 @@ export async function callGeoNames(url, userInput) {
 
 
 //POST REQUEST 2 - Weatherbit
-export async function callOpenWeather(url, latitude, longitude) {
+export async function callWeatherBit(url, days, latitude, longitude) {
     let response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
         },       
-        body: JSON.stringify({latitude, longitude}),
+        body: JSON.stringify({days, latitude, longitude}),
     })
-    return response
+    console.log("Weatherbit response is:");
+    console.log(response);
+    return response;
 }
 
 
