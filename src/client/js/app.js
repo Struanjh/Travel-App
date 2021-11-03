@@ -83,6 +83,9 @@ export async function callGeoNames(url, userInput) {
 
 //POST REQUEST 2 - Weatherbit
 export async function callWeatherBit(url, days, latitude, longitude) {
+    console.log(`Weatherbit days sent to server is ${days}`);
+    console.log(`Weatherbit lat sent to server is ${latitude}`);
+    console.log(`Weatherbit days sent to server is ${longitude}`);
     let response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
