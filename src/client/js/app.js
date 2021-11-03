@@ -24,7 +24,7 @@ export async function handleSubmit(event) {
     const geoDataJSON = await geoDataResponse.json();
     console.log(geoDataJSON);
     const latitude = geoDataJSON.geonames[0].lat;
-    const longitude = geoDataJSON.geonames[0].lng;
+    const longitude = geoDataJSON.geonames[0].lng; 
     console.log(latitude, longitude);
 
 
@@ -77,7 +77,7 @@ export async function callGeoNames(url, userInput) {
         body: JSON.stringify({userInput}),
     })
 //Once the response is received from server.js, return the response which will be stored in variable geonamesData & then converted to json
-    return response
+    return response      
 }
 
 
