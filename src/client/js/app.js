@@ -125,20 +125,10 @@ export async function callPixaBay(url, city, country) {
 
 
 //////Try to log the results to the console for now...////////
-export const updateUI = (city, days, length, weather, pixa) => {
+export const updateUI = (city, length, days, weather, pixa) => {
     console.log(
-        /*`Days until departue: ${days}
-        City User Selected: ${userCitySelection}
-        Geonames Latitude: ${latitude}
-        Geonames longitude: ${longitude}
-        Weatherbit city: ${weatherBitCity}
-        Weaterbit country: ${weatherBitCountry}
-        Weatherbit Minimum Temp ${weatherBitMinTemp}
-        Weatherbit Maximum Temp ${weatherBitMaxTemp}
-        Weatherbit Weather Description ${weatherBitDescription}
-        Pixabay Image: ${pixaBayImgURL}`*/
-        //geo.data.indexOf(userCitySelection)
-        //`You leave for ${city} in ${days} days! Your trip lasts for ${length}!`
+        `You leave for ${city} in ${days} days!`,
+        `Your trip lasts for ${length} days!`,
         `The average temperature for the trip will be ${weather.data[0].temp}!`,
         `Weather for your trip is described as ${weather.data[0].weather.description}!`,
         `Image URL is ${pixa.hits[0].webformatURL}`
