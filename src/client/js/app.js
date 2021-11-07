@@ -50,6 +50,14 @@ export async function handleSubmit(event) {
     const pixaBayImgURL = await pixaBayResponseJSON.webformatURL;
     console.log(pixaBayImgURL);
 
+    //Test for results//
+
+    console.log(
+        "geoDataJSON, weatherDataJSON, pixaBayResponseJSON",
+        geoDataJSON, weatherDataJSON, pixaBayResponseJSON
+    );
+
+
     //Call the Update UI with the response objects we have received from server and converted to JSON
     updateUI(geoDataJSON, weatherDataJSON, pixaBayImgURL);
 
@@ -112,6 +120,7 @@ export async function callPixaBay(url, city, country) {
     })
     return response
 }
+
 
 
 

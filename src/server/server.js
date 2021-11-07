@@ -142,16 +142,18 @@ try {
 
 
  async function getPixabayData (req, res) {
-     let pixaBayImg = fetch(`https://pixabay.com/api/?key=${pixaBayKey}&q=${req.body.city}&orientation=horizontal&image_type=photo`);
-    
+     let pixaBayImg = await fetch(`https://pixabay.com/api/?key=${pixaBayKey}&q=${req.body.city}&orientation=horizontal&image_type=photo`);
+    console.log("Raw result from Pixabay is:");
+    console.log(pixaBayImg);
      try {
         let pixaBayImgJSON = await pixaBayImg.json();
-        if(pixaBayImgJSON.status.code == 0) {
+        //Returned object doesn't contain status key, so need to use hits to determine success instead
+        if(pixaBayImgJSON.hits.length != 0) {
             pixaBayImgJSON.message = "City image successfully retrieved!";
             res.send(pixaBayImgJSON);
         } else {
         //Make fetch call using country code instead of City
-        let pixaBayImg = fetch(`https://pixabay.com/api/?key=${pixaBayKey}&q=${req.body.country}&orientation=horizontal&image_type=photo`);
+        let pixaBayImg = await fetch(`https://pixabay.com/api/?key=${pixaBayKey}&q=${req.body.country}&orientation=horizontal&image_type=photo`);
         let pixaBayImgJSON = await pixaBayImg.json();
         pixaBayImgJSON.message = "Country image successfully retrieved!";
         res.send(pixaBayImgJSON);
@@ -163,8 +165,3 @@ try {
         res.send(err);
        }
 }
-
-
-//export { geonamesData }
-//export { getWeatherBitData }
-//export { getPixabayData }
