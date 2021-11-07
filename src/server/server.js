@@ -150,6 +150,8 @@ try {
         //Returned object doesn't contain status key, so need to use hits to determine success instead
         if(pixaBayImgJSON.hits.length != 0) {
             pixaBayImgJSON.message = "City image successfully retrieved!";
+            console.log("JSON Result from Pixabay is:");
+            console.log(pixaBayImgJSON);
             res.send(pixaBayImgJSON);
         } else {
         //Make fetch call using country code instead of City

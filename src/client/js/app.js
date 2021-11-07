@@ -59,7 +59,7 @@ export async function handleSubmit(event) {
 
 
     //Call the Update UI with the response objects we have received from server and converted to JSON
-    updateUI(geoDataJSON, weatherDataJSON, pixaBayImgURL);
+    updateUI(userCitySelection, lengthOfTrip, daysDepart, weatherDataJSON, pixaBayResponseJSON);
 
     //Then update the UI
     //UpdateUI(City Location, Temperature, Image, Weather Icon)
@@ -125,9 +125,9 @@ export async function callPixaBay(url, city, country) {
 
 
 //////Try to log the results to the console for now...////////
-export const updateUI = (geo, weather, pixa) => {
+export const updateUI = (city, days, length, weather, pixa) => {
     console.log(
-        `Days until departue: ${days}
+        /*`Days until departue: ${days}
         City User Selected: ${userCitySelection}
         Geonames Latitude: ${latitude}
         Geonames longitude: ${longitude}
@@ -136,8 +136,16 @@ export const updateUI = (geo, weather, pixa) => {
         Weatherbit Minimum Temp ${weatherBitMinTemp}
         Weatherbit Maximum Temp ${weatherBitMaxTemp}
         Weatherbit Weather Description ${weatherBitDescription}
-        Pixabay Image: ${pixaBayImgURL}`
-        )
+        Pixabay Image: ${pixaBayImgURL}`*/
+        //geo.data.indexOf(userCitySelection)
+        //`You leave for ${city} in ${days} days! Your trip lasts for ${length}!`
+        `The average temperature for the trip will be ${weather.data[0].temp}!`,
+        `Weather for your trip is described as ${weather.data[0].weather.description}!`,
+        `Image URL is ${pixa.hits[0].webformatURL}`
+        /* Set Image using below logic:
+         const header = document.getElementById('header-bg');
+        header.style.backgroundImage = `url(${response.url})`;*/
+        );
 }
 
 
