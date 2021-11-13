@@ -17,7 +17,8 @@
   "scripts": {
     "start": "node src/server/server.js",
     "dev": "webpack-dev-server --config webpack.dev.js --open",
-    "prod": "webpack --config webpack.prod.js"
+    "prod": "webpack --config webpack.prod.js",
+    "test": "jest"
   },
   "name": "travel-app",
   "version": "1.0.0",
@@ -66,6 +67,7 @@
     "is-stream": "^2.0.1",
     "isexe": "^2.0.0",
     "isobject": "^3.0.1",
+    "jest": "^27.3.1",
     "jest-worker": "^27.1.0",
     "json-parse-better-errors": "^1.0.2",
     "json-schema-traverse": "^0.4.1",

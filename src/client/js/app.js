@@ -152,12 +152,14 @@ export const updateUI = (city, length, days, weather, pixa) => {
                 <img src="${pixa.hits[0].webformatURL}" alt="">
                 <div class="results-content">
                         <h4><b>${city}</b></h4>
-                        <p>You depart for your ${length} day trip to ${city} in ${days} days!</p>
-                        <p>The weather conditions will be ${weather.data[0].weather.description}, and the average temperature will be ${weather.data[0].temp}
+                        <p>You depart for ${city} in ${days} days!</p>
+                        <p>Your trip lasts for ${length} days!</p>
+                        <p>The weather conditions will be ${weather.data[0].weather.description}, and the average temperature will be ${weather.data[0].temp}&nbsp;℃
                 </div>
             </div>    
         </div>
         `;
+        result.scrollIntoView({behavior: "smooth"});
 }
 
 
