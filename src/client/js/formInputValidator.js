@@ -26,13 +26,13 @@ const inputValidation = (userCitySelection) => {
 
 
     if(userCitySelection === '' || departDate === '' || arrivalDate === '') {
-        throw new Error('Error! All 3 form fields must be completed!');
-        return;
+        throw new Error('All 3 form fields must be completed!');
+        return Error;
     } else if (currDateMS > departDateMS) {
-       throw new Error('Error! Departure Date must be in the future!');
+       throw new Error('Departure Date must be in the future!');
         return;
     } else if (departDate > arrivalDate) {
-        throw new Error('Error! Departure date must be before arrival date!'); 
+        throw new Error('Departure date must be before arrival date!'); 
         return;
     } else {
         return [daysToDepart, tripLength];

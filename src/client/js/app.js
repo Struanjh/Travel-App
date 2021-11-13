@@ -3,6 +3,10 @@
 
 import { inputValidation } from "./formInputValidator";
 
+//Global variables
+let error = document.getElementById('error');
+let result = document.getElementById('results');
+
 
 //'BRAIN FUNCTION - CONTROLLING FLOW OF WHOLE PROGRAMME WITH CHAINED PROMISES
 export async function handleSubmit(event) {
@@ -61,8 +65,15 @@ export async function handleSubmit(event) {
     //Call the Update UI with the response objects received from server
     updateUI(userCitySelection, lengthOfTrip, daysDepart, weatherDataJSON, pixaBayResponseJSON);
     }
+
+    //If any errors occur, they'll be passed to the catch code block through the err variable, and displayed in the app
     catch(err) {
-    console.log(err);
+    //let error = document.getElementById('error')
+    result.innerHTML = `<div id="results"><div>`;
+    error.innerHTML = `
+                    <p>**${err}</p>
+                    `
+    error.scrollIntoView({behavior: "smooth"});
     }
 }
 
@@ -133,7 +144,8 @@ export const updateUI = (city, length, days, weather, pixa) => {
          const header = document.getElementById('header-bg');
         header.style.backgroundImage = `url(${response.url})`;
         );*/
-        let result = document.getElementById('results');
+        //let result = document.getElementById('results');
+        error.innerHTML = `<p></p>`;
         result.innerHTML = `
         <div id="results">
             <div class="results-card">
