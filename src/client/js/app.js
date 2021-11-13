@@ -58,11 +58,8 @@ export async function handleSubmit(event) {
     );
 
 
-    //Call the Update UI with the response objects we have received from server and converted to JSON
+    //Call the Update UI with the response objects received from server
     updateUI(userCitySelection, lengthOfTrip, daysDepart, weatherDataJSON, pixaBayResponseJSON);
-
-    //Then update the UI
-    //UpdateUI(City Location, Temperature, Image, Weather Icon)
     }
     catch(err) {
     console.log(err);
@@ -126,7 +123,7 @@ export async function callPixaBay(url, city, country) {
 
 //////Try to log the results to the console for now...////////
 export const updateUI = (city, length, days, weather, pixa) => {
-    console.log(
+    /*console.log(
         `You leave for ${city} in ${days} days!`,
         `Your trip lasts for ${length} days!`,
         `The average temperature for the trip will be ${weather.data[0].temp}!`,
@@ -134,8 +131,21 @@ export const updateUI = (city, length, days, weather, pixa) => {
         `Image URL is ${pixa.hits[0].webformatURL}`
         /* Set Image using below logic:
          const header = document.getElementById('header-bg');
-        header.style.backgroundImage = `url(${response.url})`;*/
-        );
+        header.style.backgroundImage = `url(${response.url})`;
+        );*/
+        let result = document.getElementById('results');
+        result.innerHTML = `
+        <div id="results">
+            <div class="results-card">
+                <img src="${pixa.hits[0].webformatURL}" alt="">
+                <div class="results-content">
+                        <h4><b>${city}</b></h4>
+                        <p>You depart for your ${length} day trip to ${city} in ${days} days!</p>
+                        <p>The weather conditions will be ${weather.data[0].weather.description}, and the average temperature will be ${weather.data[0].temp}
+                </div>
+            </div>    
+        </div>
+        `;
 }
 
 
