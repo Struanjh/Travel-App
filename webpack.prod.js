@@ -11,6 +11,8 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 //Terser is default minimizer for js in webpack - its over-ridden by the css minimizer plugin so need to manually configure it here
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const jest = require("jest");
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = merge(common, {
     mode: "production",
@@ -34,7 +36,8 @@ module.exports = merge(common, {
     },
     plugins: [
         new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new WorkboxPlugin.GenerateSW()
     ],
     module: {
         rules: [

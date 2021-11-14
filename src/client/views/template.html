@@ -57,6 +57,14 @@
         <!--This will be layed out using CSS Grid-->
         <div id="error"></div>
         <div id="results"></div>
+        <!--Script to check if service workers are supported-->
+        <script>
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
-
 </html>
