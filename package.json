@@ -109,6 +109,7 @@
     "source-map": "^0.6.1",
     "source-map-support": "^0.5.19",
     "strip-final-newline": "^2.0.0",
+    "supertest": "^6.1.6",
     "supports-color": "^8.1.1",
     "tapable": "^2.2.0",
     "terser": "^5.7.2",

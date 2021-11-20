@@ -134,17 +134,6 @@ export async function callPixaBay(url, city, country) {
 
 //////Try to log the results to the console for now...////////
 export const updateUI = (city, length, days, weather, pixa) => {
-    /*console.log(
-        `You leave for ${city} in ${days} days!`,
-        `Your trip lasts for ${length} days!`,
-        `The average temperature for the trip will be ${weather.data[0].temp}!`,
-        `Weather for your trip is described as ${weather.data[0].weather.description}!`,
-        `Image URL is ${pixa.hits[0].webformatURL}`
-        /* Set Image using below logic:
-         const header = document.getElementById('header-bg');
-        header.style.backgroundImage = `url(${response.url})`;
-        );*/
-        //let result = document.getElementById('results');
         error.innerHTML = `<p></p>`;
         result.innerHTML = `
         <div id="results">
