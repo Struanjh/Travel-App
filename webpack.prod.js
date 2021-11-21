@@ -50,6 +50,12 @@ module.exports = merge(common, {
                     "sass-loader"   //sass loader turns sass into css
                 ]
                 },
+                {
+                    //Babel Loader will convert new JS Syntax into old JS to ensure browser compatibility
+                    test: "/.js$/",
+                    exclude: /node_modules/,
+                    loader: "babel-loader",
+                  },
             ]
         }
 });

@@ -77,38 +77,6 @@ res.send(geonamesData);
 
 }
 
-/////////COMMENTING OUT THIS SECTION UNTIL I HAVE VALID GEONAMES ACCOUNT///////////
-/*
-//Dynamically build the GeoNames API URL
-const geonamesUrl = geonamesUrlRoot + req.body.userCitySelection + geonamesMaxRows + geonamesUsername;
-//Log out the full URL used to make the Fetch request for convenience and debugging
-console.log(geonamesUrl);
-
-//MAKE THE FETCH REQUEST TO THE GEONAMES API & WAIT FOR A RESPONSE
-const geonamesResponse = await fetch(geonamesUrl);
-
-//IF THE RESPONSE IS SUCCESSFUL (PROMISE RESOLVES) - EXECUTE TRY CODE BLOCK
-try {
-    const geonamesData = await res.json();
-    if(geonamesData.status.code == 0) {
-        geonamesData.message = "Data successfully retrieved!";
-        res.send(geonamesData);
-    } else {
-        console.log("Data was not retrieved!!");
-    }
-//IF THE RESPONSE IS UNSUCCESSFUL -  EXECUTE CATCH CODE BLOCK
-} catch(err) {
-    console.log(err);
-    res.send(err);
-}
-*/
-
-/////////TEMPORARY STATIC GEONAMES DATA///////////////////
-
-//Async Function to get OpenWeather API Data
-/* TO DO:
-- Expected Challenges: CORS error, Converting Dates to appropriate format, distinguishing between current and future weather
-*/
 
  async function getWeatherBitData(req, res) {
     //Must define this variable outside the if statement so it is accessible in function scope 
