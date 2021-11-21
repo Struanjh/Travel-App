@@ -1,5 +1,4 @@
 
-//import { handleSubmit } from '../Client/js/app';
 
 //REQUIRE NPM PACKAGES
 
@@ -14,15 +13,19 @@ const fetch = require('node-fetch');
 const path = require('path');
 
 
+///MOVING THIS TO APP.JS TO SEPERATE SERVER AND APP FOR JEST TESTING PURPOSES///
+// //USE EXPRESS TO CREATE APP INSTANCE AND CONFIGURE THE APP (Express is a Node.js library)
+// const app = express();
+// //Explaining how we want the data to be dealt with  
+// app.use(bodyParser.urlencoded({extended: false}));
+// app.use(bodyParser.json());
+// app.use(cors());
+// //This directs the server to the folder we want to use to run the client-side code
+// app.use(express.static('dist'))
 
-//USE EXPRESS TO CREATE APP INSTANCE AND CONFIGURE THE APP (Express is a Node.js library)
-const app = express();
-//Explaining how we want the data to be dealt with  
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-app.use(cors());
-//This directs the server to the folder we want to use to run the client-side code
-app.use(express.static('dist'))
+
+//NEW - Import App From App.js
+const app = require("../client/js/app");
 
 //SPIN UP SERVER
 const port = 8000;

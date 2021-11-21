@@ -14,16 +14,6 @@ module.exports = {
                 use: ["html-loader"]
             },
             {
-                //Handles images with any of below file extensions and outputs them into a media folder inside dist
-               /* test: /\.(svg|png|jpg|gif)$/,
-                //use: ["file-loader"]
-                use: {
-                    loader: "file-loader",
-                    options: {
-                       name: "[name].[hash].[ext]",
-                       outputPath: "media"
-                    }
-                 }*/
                  test: /\.(svg|png|jpg|gif)$/,
                  type:"asset/resource"
             }
