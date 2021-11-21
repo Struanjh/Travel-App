@@ -3,25 +3,6 @@
 
 import { inputValidation } from "./formInputValidator";
 
-//CREATE APPLICATION WITH EXPRESS
-const express = require('express')
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const fetch = require('node-fetch');
-const path = require('path');
-
-const app = express();
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-app.use(cors());
-//This directs the server to the folder we want to use to run the client-side code
-app.use(express.static('dist'))
-//When a get request is made to homepage, return String Hello World
-app.get("/", (req, res) => {
-    res.status(200).send("Hello World");
-});
-
-module.exports = app;
 
 //Global variables
 let error = document.getElementById('error');

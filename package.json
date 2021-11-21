@@ -31,6 +31,7 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "dependencies": {
+    "@babel/runtime": "^7.16.3",
     "acorn": "^8.4.1",
     "acorn-import-assertions": "^1.7.6",
     "ajv": "^6.12.6",

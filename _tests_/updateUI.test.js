@@ -1,4 +1,5 @@
 
+import { experiments } from "webpack";
 import { updateUI } from "../src/client/js/app";
 
 //Tests if the updateUI function produces an output
@@ -15,8 +16,15 @@ import { updateUI } from "../src/client/js/app";
     })
   });*/
 
+//   describe('Update UI Function', () => {
+//     test('It should return a value', () => {
+//       expect(updateUI).not.toEqual('');
+//     })
+//   });
+
+
   describe('Update UI Function', () => {
     test('It should return a value', () => {
-      expect(updateUI).not.toEqual('');
-    })
+      expect(updateUI('London','5','2')).toBeDefined();
+    });
   });

@@ -1,7 +1,7 @@
 
 
 const request = require('supertest');
-const app = require("../src/client/js/app");
+const app = require('../src/server/app');
 
 //Test if the server.js responds with successful status - 200 - when post request is made to weatherBit API endpoint
 // describe('Test WeatherBit Post EndPoint', () => {
@@ -15,9 +15,11 @@ const app = require("../src/client/js/app");
 //     });
 // });
 
-    describe("Test the root path", () => {
-        test("When get request is made to root path we should get success response code of 200", async () => {
-            const response = await request(app).get("/");
+    describe("Test path", () => {
+        test("When get request is made to test path we should get success response code of 200", async () => {
+            const response = await request(app).get("/test");
             expect(response.statusCode).toBe(200);
         });
     });
+
+
