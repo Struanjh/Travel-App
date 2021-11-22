@@ -1,20 +1,12 @@
 
-
+//Provides support for compiled/transpiled async functions
+import "regenerator-runtime/runtime";
 const request = require('supertest');
 const app = require('../src/server/app');
 
-//Test if the server.js responds with successful status - 200 - when post request is made to weatherBit API endpoint
-// describe('Test WeatherBit Post EndPoint', () => {
-//     test('get weather data', async () => {
-//         const res = await request(app)
-//             .post('/callWeatherBit')
-//             .send({
-//                 req: `https://api.weatherbit.io/v2.0/current?lat=${req.body.latitude}&lon=${req.body.longitude}&key=${weatherBitKey}`,
-//             });
-//         expect(res.statusCode).toEqual(200);
-//     });
-// });
 
+//Test function sends a request to the /test route in server/app.js, and tests if a 200 success response code is returned
+//Server.js and app.js in server folder were seperated so server doesn't keep running after testing
     describe("Test path", () => {
         test("When get request is made to test path we should get success response code of 200", async () => {
             const response = await request(app).get("/test");
